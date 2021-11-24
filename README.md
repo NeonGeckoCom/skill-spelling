@@ -11,7 +11,8 @@ Mycroft can spell any word which is understood by speech-to-text.  The proper sp
 * "Spell omnipotence"
 
 ## Credits 
-Mycroft AI (@MycroftAI)
+[Mycroft AI](https://github.com/MycroftAI)
+[NeonDaniel](https://github.com/NeonDaniel)
 
 ## Category
 **Information**
