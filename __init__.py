@@ -1,3 +1,31 @@
+# NEON AI (TM) SOFTWARE, Software Development Kit & Application Framework
+# All trademark and other rights reserved by their respective owners
+# Copyright 2008-2022 Neongecko.com Inc.
+# Contributors: Daniel McKnight, Guy Daniels, Elon Gasper, Richard Leeds,
+# Regina Bloomstine, Casimiro Ferreira, Andrii Pernatii, Kirill Hrymailo
+# BSD-3 License
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+# 1. Redistributions of source code must retain the above copyright notice,
+#    this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from this
+#    software without specific prior written permission.
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+# CONTRIBUTORS  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+# OR PROFITS;  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
 # Copyright 2018 Mycroft AI Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +41,13 @@
 # limitations under the License.
 
 import time
+
+from neon_utils.skills import NeonSkill
 from adapt.intent import IntentBuilder
-from mycroft import MycroftSkill, intent_handler
-from mycroft.audio import wait_while_speaking
+from mycroft import intent_handler
 
 
-class SpellingSkill(MycroftSkill):
+class SpellingSkill(NeonSkill):
     SEC_PER_LETTER = 0.9         # based on the Mark 1 scrolling speed
     LETTERS_PER_SCREEN = 7.0     # based on the Mark 1 screen size
 
@@ -27,26 +56,15 @@ class SpellingSkill(MycroftSkill):
 
     @intent_handler(IntentBuilder("").require("Spell").require("Word"))
     def handle_spell(self, message):
+        if not self.neon_in_request(message):
+            return
         word = message.data.get("Word")
         spelled_word = '; '.join(word).upper()
-
-        self.enclosure.deactivate_mouth_events()
+        if self.gui_enabled:
+            self.gui.show_text(word)
+            self.clear_gui_timeout()
+        # self.enclosure.deactivate_mouth_events()
         self.speak(spelled_word)
-
-        # Pause mouth shapes appearing on screen for at least enough time
-        # for the word to scroll by on the Mark 1 screen.  Pad with blanks
-        # to prevent re-starting the scroll action if the timing is slightly
-        # off.
-
-        # TODO: Add mouth_text(word, wrap_at_end=False) parameter and get rid
-        #       of the need for deactivate_mouth_events() -- or at least handle
-        #       at the Enclosure level.
-        self.enclosure.mouth_text(word+"          ")
-        time.sleep(self.LETTERS_PER_SCREEN + len(word) * self.SEC_PER_LETTER)
-        wait_while_speaking()
-
-        self.enclosure.activate_mouth_events()
-        self.enclosure.mouth_reset()
 
 
 def create_skill():
