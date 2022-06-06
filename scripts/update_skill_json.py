@@ -25,42 +25,33 @@
 # LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-# Copyright 2018 Mycroft AI Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#    http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
-import time
+import json
+from os.path import dirname, join
+from pprint import pprint
+from neon_utils.packaging_utils import build_skill_spec
 
-from neon_utils.skills import NeonSkill
-from adapt.intent import IntentBuilder
-from mycroft import intent_handler
+skill_dir = dirname(dirname(__file__))
 
 
-class SpellingSkill(NeonSkill):
-    def __init__(self):
-        super(SpellingSkill, self).__init__(name="SpellingSkill")
+def get_skill_json():
+    print(f"skill_dir={skill_dir}")
+    skill_json = join(skill_dir, "skill.json")
+    skill_spec = build_skill_spec(skill_dir)
+    pprint(skill_spec)
+    try:
+        with open(skill_json) as f:
+            current = json.load(f)
+    except Exception as e:
+        print(e)
+        current = None
+    if current != skill_spec:
+        print("Skill Updated. Writing skill.json")
+        with open(skill_json, 'w+') as f:
+            json.dump(skill_spec, f, indent=4)
+    else:
+        print("No changes to skill.json")
 
-    @intent_handler(IntentBuilder("Spell").require("Spell").require("Word"))
-    def handle_spell(self, message):
-        if not self.neon_in_request(message):
-            return
-        word = message.data.get("Word")
-        spelled_word = '; '.join(word).upper()
-        if self.gui_enabled:
-            self.gui.show_text(word)
-        self.speak(spelled_word)
 
-
-def create_skill():
-    return SpellingSkill()
+if __name__ == "__main__":
+    get_skill_json()
