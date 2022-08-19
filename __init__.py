@@ -57,8 +57,7 @@ class SpellingSkill(NeonSkill):
             return
         word = message.data.get("Word")
         spelled_word = '; '.join(word).upper()
-        if self.gui_enabled:
-            self.gui.show_text(word)
+        self.gui.show_text(word)
         self.speak(spelled_word)
 
 
