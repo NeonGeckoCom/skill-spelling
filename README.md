@@ -6,9 +6,9 @@ Mycroft can spell any word which is understood by speech-to-text.  The proper sp
 
 ## Examples 
 * "How do you spell aardvark?"
-* "Spell succotash"
+* "Spell succotash."
 * "How do you spell bureacracy?"
-* "Spell omnipotence"
+* "Spell omnipotence."
 
 ## Credits 
 [Mycroft AI](https://github.com/MycroftAI)
