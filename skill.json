@@ -5,10 +5,10 @@
     "short_description": "Let Mycroft help you spell words",
     "description": "Mycroft can spell any word which is understood by speech-to-text.  The proper spelling is pronounced on all platforms, as well as displayed by devices such as the Mark 1.",
     "examples": [
-        "how do you spell aardvark?",
-        "spell succotash",
-        "how do you spell bureacracy?",
-        "spell omnipotence"
+        "How do you spell aardvark?",
+        "Spell succotash.",
+        "How do you spell bureacracy?",
+        "Spell omnipotence."
     ],
     "desktopFile": false,
     "warning": "",
