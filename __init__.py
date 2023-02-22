@@ -40,16 +40,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import time
-
 from neon_utils.skills import NeonSkill
 from adapt.intent import IntentBuilder
+from ovos_utils import classproperty
+from ovos_utils.process_utils import RuntimeRequirements
+
 from mycroft import intent_handler
 
 
 class SpellingSkill(NeonSkill):
     def __init__(self):
         super(SpellingSkill, self).__init__(name="SpellingSkill")
+
+    @classproperty
+    def runtime_requirements(self):
+        return RuntimeRequirements(network_before_load=False,
+                                   internet_before_load=False,
+                                   gui_before_load=False,
+                                   requires_internet=False,
+                                   requires_network=False,
+                                   requires_gui=False,
+                                   no_internet_fallback=True,
+                                   no_network_fallback=True,
+                                   no_gui_fallback=True)
 
     @intent_handler(IntentBuilder("Spell").require("Spell").require("Word"))
     def handle_spell(self, message):
