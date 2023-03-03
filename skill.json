@@ -1,9 +1,9 @@
 {
     "title": "Spelling",
     "url": "https://github.com/NeonGeckoCom/skill-spelling",
-    "summary": "Let Mycroft help you spell words",
-    "short_description": "Let Mycroft help you spell words",
-    "description": "Mycroft can spell any word which is understood by speech-to-text.  The proper spelling is pronounced on all platforms, as well as displayed by devices such as the Mark 1.",
+    "summary": "Let Neon help you spell words",
+    "short_description": "Let Neon help you spell words",
+    "description": "Neon can spell any word which is understood by speech-to-text.",
     "examples": [
         "How do you spell aardvark?",
         "Spell succotash.",
@@ -15,7 +15,8 @@
     "systemDeps": false,
     "requirements": {
         "python": [
-            "neon-utils>=0.6,<2.0.0"
+            "neon-utils~=1.0",
+            "ovos_utils~=0.0.28"
         ],
         "system": {},
         "skill": []
