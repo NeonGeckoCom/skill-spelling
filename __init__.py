@@ -49,9 +49,6 @@ from mycroft import intent_handler
 
 
 class SpellingSkill(NeonSkill):
-    def __init__(self):
-        super(SpellingSkill, self).__init__(name="SpellingSkill")
-
     @classproperty
     def runtime_requirements(self):
         return RuntimeRequirements(network_before_load=False,
@@ -72,7 +69,3 @@ class SpellingSkill(NeonSkill):
         spelled_word = '; '.join(word).upper()
         self.gui.show_text(word)
         self.speak(spelled_word)
-
-
-def create_skill():
-    return SpellingSkill()
