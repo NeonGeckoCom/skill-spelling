@@ -1,0 +1,35 @@
+# Specify intents to test here. Valid test cases are as follows:
+
+# Basic intent match tests only:
+#lang:
+#  intent_name:
+#    - example utterance
+#    - other example utterance
+
+# Intent tests with expected vocab/entity matches:
+#lang:
+#  intent_name:
+#    - example_utterance:
+#        - expected vocab name
+#        - other expected vocab name
+
+# Intent tests with specific vocab/entity extraction tests:
+#lang:
+#  intent_name:
+#    - example_utterance:
+#        - expected_vocab_key: expected_vocab_value
+#        - expected_entity_key: expected_entity_value
+
+
+en-us:
+  SpellIntent:
+    - spell something:
+        - Word: something
+    - how do you spell the word excellent:
+        - Word: excellent
+
+unmatched intents:
+  en-us:
+    - how do you spell
+    - what is a spell
+    - can you spell
