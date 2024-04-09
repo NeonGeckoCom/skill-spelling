@@ -45,7 +45,7 @@ from adapt.intent import IntentBuilder
 from ovos_utils import classproperty
 from ovos_utils.process_utils import RuntimeRequirements
 
-from mycroft import intent_handler
+from ovos_workshop.decorators import intent_handler
 
 
 class SpellingSkill(NeonSkill):
@@ -61,7 +61,7 @@ class SpellingSkill(NeonSkill):
                                    no_network_fallback=True,
                                    no_gui_fallback=True)
 
-    @intent_handler(IntentBuilder("Spell").require("Spell").require("Word"))
+    @intent_handler(IntentBuilder("SpellIntent").require("Spell").require("Word"))
     def handle_spell(self, message):
         if not self.neon_in_request(message):
             return
