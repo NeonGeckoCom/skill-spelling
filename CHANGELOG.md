@@ -1,13 +1,20 @@
 # Changelog
 
-## [0.1.1a2](https://github.com/NeonGeckoCom/skill-spelling/tree/0.1.1a2) (2023-06-15)
+## [1.0.1a2](https://github.com/NeonGeckoCom/skill-spelling/tree/1.0.1a2) (2024-04-02)
 
-[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/0.1.0...0.1.1a2)
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.0.1a1...1.0.1a2)
 
 **Merged pull requests:**
 
-- Update GH automation to best practices [\#23](https://github.com/NeonGeckoCom/skill-spelling/pull/23) ([NeonDaniel](https://github.com/NeonDaniel))
-- Deprecate `create_skill` method and `__init__` for best practices [\#21](https://github.com/NeonGeckoCom/skill-spelling/pull/21) ([NeonDaniel](https://github.com/NeonDaniel))
+- Add intent tests [\#26](https://github.com/NeonGeckoCom/skill-spelling/pull/26) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [1.0.1a1](https://github.com/NeonGeckoCom/skill-spelling/tree/1.0.1a1) (2024-02-05)
+
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.0.0...1.0.1a1)
+
+**Merged pull requests:**
+
+- Support ovos-utils 0.1 [\#25](https://github.com/NeonGeckoCom/skill-spelling/pull/25) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
