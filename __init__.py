@@ -41,10 +41,10 @@
 # limitations under the License.
 
 from neon_utils.skills import NeonSkill
-from adapt.intent import IntentBuilder
 from ovos_utils import classproperty
 from ovos_utils.process_utils import RuntimeRequirements
 
+from ovos_workshop.intents import IntentBuilder
 from ovos_workshop.decorators import intent_handler
 
 
