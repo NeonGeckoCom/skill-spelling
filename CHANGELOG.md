@@ -1,20 +1,20 @@
 # Changelog
 
-## [1.0.1a2](https://github.com/NeonGeckoCom/skill-spelling/tree/1.0.1a2) (2024-04-02)
+## [1.1.1a2](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.1a2) (2025-03-11)
 
-[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.0.1a1...1.0.1a2)
-
-**Merged pull requests:**
-
-- Add intent tests [\#26](https://github.com/NeonGeckoCom/skill-spelling/pull/26) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [1.0.1a1](https://github.com/NeonGeckoCom/skill-spelling/tree/1.0.1a1) (2024-02-05)
-
-[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.0.0...1.0.1a1)
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.1a1...1.1.1a2)
 
 **Merged pull requests:**
 
-- Support ovos-utils 0.1 [\#25](https://github.com/NeonGeckoCom/skill-spelling/pull/25) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update automation, gitignore, and license notices [\#29](https://github.com/NeonGeckoCom/skill-spelling/pull/29) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [1.1.1a1](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.1a1) (2024-09-17)
+
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.0...1.1.1a1)
+
+**Merged pull requests:**
+
+- Update OVOS depdendencies for 0.x compat [\#28](https://github.com/NeonGeckoCom/skill-spelling/pull/28) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
