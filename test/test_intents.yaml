@@ -28,8 +28,21 @@ en-us:
     - how do you spell the word excellent:
         - Word: excellent
 
+uk-ua:
+  SpellIntent:
+    - скажи як пишеться комп'ютер:
+        - Word: комп'ютер
+    - правопис слова університет:
+        - Word: університет
+    - як пишеться інформація:
+        - Word: інформація
+
 unmatched intents:
   en-us:
     - how do you spell
     - what is a spell
     - can you spell
+  uk-ua:
+    - як писати
+    - що таке правопис
+    - скажи алфавіт
