@@ -1,20 +1,28 @@
 # Changelog
 
-## [1.1.1a2](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.1a2) (2025-03-11)
+## [1.1.2a3](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.2a3) (2026-06-26)
 
-[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.1a1...1.1.1a2)
-
-**Merged pull requests:**
-
-- Update automation, gitignore, and license notices [\#29](https://github.com/NeonGeckoCom/skill-spelling/pull/29) ([NeonDaniel](https://github.com/NeonDaniel))
-
-## [1.1.1a1](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.1a1) (2024-09-17)
-
-[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.0...1.1.1a1)
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.2a2...1.1.2a3)
 
 **Merged pull requests:**
 
-- Update OVOS depdendencies for 0.x compat [\#28](https://github.com/NeonGeckoCom/skill-spelling/pull/28) ([NeonDaniel](https://github.com/NeonDaniel))
+- Update dependency to stable spec [\#34](https://github.com/NeonGeckoCom/skill-spelling/pull/34) ([NeonDaniel](https://github.com/NeonDaniel))
+
+## [1.1.2a2](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.2a2) (2025-10-13)
+
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.2a1...1.1.2a2)
+
+**Merged pull requests:**
+
+- Ukrainian translation and tests [\#31](https://github.com/NeonGeckoCom/skill-spelling/pull/31) ([NeonDmitry](https://github.com/NeonDmitry))
+
+## [1.1.2a1](https://github.com/NeonGeckoCom/skill-spelling/tree/1.1.2a1) (2025-10-09)
+
+[Full Changelog](https://github.com/NeonGeckoCom/skill-spelling/compare/1.1.1...1.1.2a1)
+
+**Merged pull requests:**
+
+- Update test dependency to resolve dependency errors [\#32](https://github.com/NeonGeckoCom/skill-spelling/pull/32) ([NeonDaniel](https://github.com/NeonDaniel))
 
 
 
